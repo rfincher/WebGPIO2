@@ -84,10 +84,15 @@ The Mac Address is visible when you use "ip addr" in the link/ether line.
 To set up a static IP number put lines like the following in your /etc/network/interfaces file.
 
 "#iface eth0 inet dhcp"
+
 iface eth0 inet static
+
 address 192.168.1.222
+
 netmask 255.255.255.0
+
 gateway 192.168.1.1
+
 
 The line "#iface eth0 inet dhcp" is the default that sets up dhcp.  I commented it out with the "#" so I can easily 
 reconfigure if I need to.  Use your IP number and gateway address.
