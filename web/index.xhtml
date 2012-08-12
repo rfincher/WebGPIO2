@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Web GPIO</title>
+        <link rel="stylesheet" type="text/css" href="resources/stylesheets/main.css"/>
+    </h:head>
+    <h:body>
+        <div class="pageTitle">Web GPIO</div>
+
+        <h:form>
+            <div class="mainBlock">
+                <div class="button1Box" >
+                    <h:commandButton styleClass="button1" value="Blink GPIO 7" action="#{mainSessionBean.blink7}" />
+                </div>
+                
+                <div class="button1Box" >
+                    <h:commandButton styleClass="button1" value="GPIO 0 On" action="#{mainSessionBean.pin0On}" />
+                </div>
+                
+                <div class="button1Box" >
+                    <h:commandButton styleClass="button1" value="GPIO 0 Off" action="#{mainSessionBean.pin0Off}" />
+                </div>
+                
+                <div class="button1Box" >
+                    <h:commandButton styleClass="button1" value="Blink 2, 3, 4" action="#{mainSessionBean.blink234}" />
+                </div>
+
+
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
