@@ -17,7 +17,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class MainSessionBean implements Serializable {
 
-    private static boolean DEBUGGING = true;
+    private static boolean DEBUGGING = false;
     private static boolean PRINTTRACE = true;
     private OutPin pin7Out = null;
     private OutPin pin0Out = null;
