@@ -3,22 +3,22 @@ WebGPIO2
 
 Raspberry Pi web app to turn on and off GPIO pins from a browser.
 
-Thanks to Jeronen Kransen for his Framboos Java wrapper for the Wiring Pi library.  You cn see his GitHub here:
+The dist folder contain the ready to run file: WebGPIO2.war
+Put this file in your Tomcat webapps directory on your Pi to run.  See details below.
+
+Thanks to Jeronen Kransen for his Framboos Java wrapper for the WiringPi library.  You cn see his GitHub here:
 https://github.com/jkransen/framboos
 
 His blog on the Pi is here: http://jkransen.wordpress.com/2012/07/16/raspberry-pi/#comment-17
 
 Dependencies:
 
-You must load WiringPi on your Raspberry Pi for this to work.  Thanks to Gordon for his work: 
+You must load WiringPi on your Raspberry Pi for this to work: 
 https://projects.drogon.net/raspberry-pi/wiringpi/
 
-Thanks to Gordon!
+Thanks to Gordon for his C library!
 
-Tomcat6 is needed as the Servlet Container to run this web app.  If you need a smaller Servlet Container to save memory,
-Winstone or Jetty will probably work too.
-
-If you don't have Java installed on your Pi yet you must install it before installing Tomcat.
+If you don't have Java installed on your Pi yet you must install it before installing Tomcat or other Servlet Container.
 
 Use the command: sudo apt-get install openjdk-6-jdk
 
@@ -28,6 +28,9 @@ You sould get a message like:
 java version "1.6.0_24"
 OpenJDK Runtime Environment (IcedTea6 1.11.3) (6b24-1.11.3-2+rpi1)
 OpenJDK Zero VM (build 20.0-b12, mixed mode)
+
+Tomcat6 is needed as the Servlet Container to run this web app.  If you need a smaller Servlet Container to save memory,
+Winstone or Jetty will probably work too.
 
 Install Tomcat 6 on the Pi with: sudo apt-get install tomcat6
 
