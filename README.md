@@ -100,6 +100,14 @@ for installation.
 
 You can then load this project into NetBeans, run it and NetBeans will launch Tomcat and load the web app into it automatically.
 
+You need to have the Java 6 JDK installed on your development machine and select it for the project.  Java 7 comes with 
+Netbeans but it isn't available for the Pi yet.
+
+The Web App is a Java Server Faces (JSF) Facelet, which means that the web page has a Class called a backing bean supporting it.
+When you click a button on the web page a method n the Class /src/conf/java/beans/MainSessionBean gets called.
+
+MainSessionBean is session scoped, so it stays alive the entire time the user is logged into the web app.
+
 There are two static booleans in src/java/beans/MainSessionBean.java: DEBUGGING and PRINTTRACE.
 
 To run the web app on your Windows box or Mac in Tomcat under NetBeans, set DEBUGGING to true.  This prevents the 
@@ -114,8 +122,21 @@ Set DEBUGGING to false and clean and build before deploying the web app to the P
 The web app is very simple.  It has a button that turns on and off GPIO pin 7 (see the WiringPi pin diagram) three times 
 while increasing the time between turn ons.
 
-Another button turns pin 2, 3, and 4 on and off in secuence for 5 seconds, then turns them all on for 1/4 second (250 mS) and 
+Another button turns pin 2, 3, and 4 on and off in sequence for 5 seconds, then turns them all on for 1/4 second (250 mS) and 
 off for 1/4 second for 120 iterations (60 seconds).
 
 The last two buttons turn pin 0 on and off.
+
+The methods called by the buttons on the index.xhtml page are in the Class /src/conf/java/beans/MainSessionBean.
+
+JSF uses an expression language in index.xhtml that lets the web page have access to Java methods and variables.
+
+When you see action="#{mainSessionBean.blink7}" in the HTML for a button, it means to call the method "blink7" in the 
+Class MainSessionBean.
+
+Tomcat will instantiate MainSessionBean for you, that's what the annotation "@ManagedBean" means at the beginning of 
+the class file.
+
+If you want to change the layout or appearance of the buttons in index.xhtml you can change the cascading style sheet 
+web/resources/stylesheets/main.css
 
