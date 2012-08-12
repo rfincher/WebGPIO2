@@ -121,7 +121,7 @@ public class MainSessionBean implements Serializable {
             pin0Out = new OutPin(0, DEBUGGING, PRINTTRACE);
         }
 
-        // turn off gpio pin 7
+        // turn off gpio pin 0
         pin0Out.setValue(true);
 
     }
@@ -131,7 +131,7 @@ public class MainSessionBean implements Serializable {
             pin0Out = new OutPin(0, DEBUGGING, PRINTTRACE);
         }
 
-        // turn off gpio pin 7
+        // turn off gpio pin 0
         pin0Out.setValue(false);
 
     }
